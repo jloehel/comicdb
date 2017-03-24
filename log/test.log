@@ -1,0 +1,1626 @@
+  [1m[36m (25.2ms)[0m  [1mCREATE TABLE "comics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ISBN13" varchar, "ISBN10" varchar, "title" varchar, "release_date" date, "edition" integer, "language" varchar, "format" varchar, "shape" varchar, "pages" integer, "price" decimal, "description" text, "borrowed" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (17.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (25.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (17.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170322102312')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-22 10:43:37.535925"], ["updated_at", "2017-03-22 10:43:37.535925"]]
+  [1m[35m (18.9ms)[0m  commit transaction
+Redirected to http://test.host/comics/1
+Completed 302 Found in 31ms (ActiveRecord: 19.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-22 10:45:15.821796"], ["updated_at", "2017-03-22 10:45:15.821796"]]
+  [1m[35m (21.9ms)[0m  commit transaction
+Redirected to http://test.host/comics/2
+Completed 302 Found in 33ms (ActiveRecord: 22.4ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 271ms (ActiveRecord: 0.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (29.8ms)[0m  [1mCREATE TABLE "comics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ISBN13" varchar, "ISBN10" varchar, "title" varchar, "release_date" date, "edition" integer, "language" varchar, "format" varchar, "shape" varchar, "pages" integer, "price" decimal, "description" text, "borrowed" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (33.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (29.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (23.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170322102312')
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (32.4ms)[0m  [1mCREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (28.1ms)[0m  CREATE TABLE "comics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ISBN13" varchar, "ISBN10" varchar, "title" varchar, "release_date" date, "edition" integer, "language" varchar, "format" varchar, "shape" varchar, "pages" integer, "price" decimal, "description" text, "borrowed" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (27.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (25.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (28.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170322125426')[0m
+  [1m[35m (22.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170322102312')
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-22 13:32:50.175480"], ["updated_at", "2017-03-22 13:32:50.175480"]]
+  [1m[35m (26.8ms)[0m  commit transaction
+Redirected to http://test.host/comics/1
+Completed 302 Found in 38ms (ActiveRecord: 27.3ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 246ms (Views: 7.0ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-22 13:34:10.620668"], ["updated_at", "2017-03-22 13:34:10.620668"]]
+  [1m[36m (25.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/comics/2
+Completed 302 Found in 36ms (ActiveRecord: 25.6ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 233ms (Views: 6.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-22 13:39:42.147065"], ["updated_at", "2017-03-22 13:39:42.147065"]]
+  [1m[36m (22.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/comics/3
+Completed 302 Found in 33ms (ActiveRecord: 22.8ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 229ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-22 13:45:38.396146"], ["updated_at", "2017-03-22 13:45:38.396146"]]
+  [1m[36m (29.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/comics/4
+Completed 302 Found in 40ms (ActiveRecord: 30.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 232ms (Views: 6.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-22 13:49:35.486496"], ["updated_at", "2017-03-22 13:49:35.486496"]]
+  [1m[36m (30.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/comics/5
+Completed 302 Found in 41ms (ActiveRecord: 31.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 230ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString", "ISBN10"=>nil}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-22 13:50:04.700334"], ["updated_at", "2017-03-22 13:50:04.700334"]]
+  [1m[36m (28.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/comics/6
+Completed 302 Found in 39ms (ActiveRecord: 29.0ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 264ms (Views: 6.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "MyString"], ["created_at", "2017-03-22 13:51:55.750995"], ["updated_at", "2017-03-22 13:51:55.750995"]]
+  [1m[36m (26.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/categories/1
+Completed 302 Found in 33ms (ActiveRecord: 27.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString", "ISBN10"=>nil}}
+Unpermitted parameter: ISBN10
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "MyString"], ["created_at", "2017-03-22 13:51:55.783841"], ["updated_at", "2017-03-22 13:51:55.783841"]]
+  [1m[35m (19.1ms)[0m  commit transaction
+Redirected to http://test.host/categories/2
+Completed 302 Found in 21ms (ActiveRecord: 19.2ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-22 13:51:55.826380"], ["updated_at", "2017-03-22 13:51:55.826380"]]
+  [1m[35m (23.5ms)[0m  commit transaction
+Redirected to http://test.host/comics/7
+Completed 302 Found in 32ms (ActiveRecord: 23.8ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 268ms (Views: 6.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "MyString"], ["created_at", "2017-03-22 13:52:53.497482"], ["updated_at", "2017-03-22 13:52:53.497482"]]
+  [1m[36m (25.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/categories/3
+Completed 302 Found in 31ms (ActiveRecord: 26.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString", "ISBN10"=>nil}}
+Unpermitted parameter: ISBN10
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "MyString"], ["created_at", "2017-03-22 13:52:53.529268"], ["updated_at", "2017-03-22 13:52:53.529268"]]
+  [1m[35m (28.4ms)[0m  commit transaction
+Redirected to http://test.host/categories/4
+Completed 302 Found in 30ms (ActiveRecord: 28.6ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-22 13:52:53.580971"], ["updated_at", "2017-03-22 13:52:53.580971"]]
+  [1m[35m (22.8ms)[0m  commit transaction
+Redirected to http://test.host/comics/8
+Completed 302 Found in 31ms (ActiveRecord: 23.2ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 266ms (Views: 6.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "MyString"], ["created_at", "2017-03-22 13:54:00.449128"], ["updated_at", "2017-03-22 13:54:00.449128"]]
+  [1m[36m (26.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/categories/5
+Completed 302 Found in 32ms (ActiveRecord: 27.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString", "ISBN10"=>nil}}
+Unpermitted parameter: ISBN10
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "MyString"], ["created_at", "2017-03-22 13:54:00.481899"], ["updated_at", "2017-03-22 13:54:00.481899"]]
+  [1m[35m (18.5ms)[0m  commit transaction
+Redirected to http://test.host/categories/6
+Completed 302 Found in 20ms (ActiveRecord: 18.7ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-22 13:54:00.524225"], ["updated_at", "2017-03-22 13:54:00.524225"]]
+  [1m[36m (21.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/comics/9
+Completed 302 Found in 30ms (ActiveRecord: 22.0ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 262ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "MyString"], ["created_at", "2017-03-22 13:54:37.063521"], ["updated_at", "2017-03-22 13:54:37.063521"]]
+  [1m[36m (31.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/categories/7
+Completed 302 Found in 38ms (ActiveRecord: 32.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>nil}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 228ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-22 13:54:37.339577"], ["updated_at", "2017-03-22 13:54:37.339577"]]
+  [1m[36m (36.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/comics/10
+Completed 302 Found in 44ms (ActiveRecord: 36.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "MyString"], ["created_at", "2017-03-22 13:54:59.345596"], ["updated_at", "2017-03-22 13:54:59.345596"]]
+  [1m[36m (26.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/categories/8
+Completed 302 Found in 32ms (ActiveRecord: 26.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>nil}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered categories/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 228ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-22 13:54:59.616066"], ["updated_at", "2017-03-22 13:54:59.616066"]]
+  [1m[35m (22.8ms)[0m  commit transaction
+Redirected to http://test.host/comics/11
+Completed 302 Found in 31ms (ActiveRecord: 23.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "MyString"], ["created_at", "2017-03-22 13:55:22.952928"], ["updated_at", "2017-03-22 13:55:22.952928"]]
+  [1m[36m (23.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/categories/9
+Completed 302 Found in 29ms (ActiveRecord: 23.9ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>nil}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered categories/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 232ms (Views: 6.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-22 13:55:23.225447"], ["updated_at", "2017-03-22 13:55:23.225447"]]
+  [1m[35m (23.2ms)[0m  commit transaction
+Redirected to http://test.host/comics/12
+Completed 302 Found in 31ms (ActiveRecord: 23.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (27.7ms)[0m  [1mCREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (22.0ms)[0m  CREATE TABLE "comics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ISBN13" varchar, "ISBN10" varchar, "title" varchar, "release_date" date, "edition" integer, "language" varchar, "format" varchar, "shape" varchar, "pages" integer, "price" decimal, "description" text, "borrowed" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (23.7ms)[0m  [1mCREATE TABLE "publishers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "website" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (23.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (21.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (22.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170322143003')
+  [1m[36m (18.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170322102312')[0m
+  [1m[35m (18.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170322125426')
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "MyString"], ["created_at", "2017-03-22 18:09:32.574856"], ["updated_at", "2017-03-22 18:09:32.574856"]]
+  [1m[35m (17.2ms)[0m  commit transaction
+Redirected to http://test.host/categories/1
+Completed 302 Found in 24ms (ActiveRecord: 17.6ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>nil}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered categories/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 231ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-22 18:09:32.840207"], ["updated_at", "2017-03-22 18:09:32.840207"]]
+  [1m[36m (22.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/comics/1
+Completed 302 Found in 31ms (ActiveRecord: 22.9ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "MyString"], ["created_at", "2017-03-23 09:38:20.663525"], ["updated_at", "2017-03-23 09:38:20.663525"]]
+  [1m[36m (36.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/categories/2
+Completed 302 Found in 43ms (ActiveRecord: 36.9ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>nil}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered categories/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 243ms (Views: 7.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-23 09:38:20.960042"], ["updated_at", "2017-03-23 09:38:20.960042"]]
+  [1m[35m (22.0ms)[0m  commit transaction
+Redirected to http://test.host/comics/2
+Completed 302 Found in 30ms (ActiveRecord: 22.3ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "MyString"], ["created_at", "2017-03-23 09:38:49.341389"], ["updated_at", "2017-03-23 09:38:49.341389"]]
+  [1m[36m (29.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/categories/3
+Completed 302 Found in 35ms (ActiveRecord: 29.8ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>nil}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered categories/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 262ms (Views: 6.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-23 09:38:49.649184"], ["updated_at", "2017-03-23 09:38:49.649184"]]
+  [1m[35m (20.2ms)[0m  commit transaction
+Redirected to http://test.host/comics/3
+Completed 302 Found in 28ms (ActiveRecord: 20.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "publishers"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "MyString"], ["created_at", "2017-03-23 09:42:51.645994"], ["updated_at", "2017-03-23 09:42:51.645994"]]
+  [1m[36m (40.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/categories/4
+Completed 302 Found in 46ms (ActiveRecord: 41.0ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>nil}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered categories/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 270ms (Views: 6.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-23 09:42:51.973718"], ["updated_at", "2017-03-23 09:42:51.973718"]]
+  [1m[35m (31.1ms)[0m  commit transaction
+Redirected to http://test.host/comics/4
+Completed 302 Found in 39ms (ActiveRecord: 31.4ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>"MyString", "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "publishers" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "MyString"], ["website", "MyString"], ["created_at", "2017-03-23 09:42:52.022402"], ["updated_at", "2017-03-23 09:42:52.022402"]]
+  [1m[36m (19.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/publishers/1
+Completed 302 Found in 25ms (ActiveRecord: 20.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>"MyString", "website"=>"MyString", "description"=>"MyText", "ISBN10"=>nil}}
+Unpermitted parameters: description, ISBN10
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "publishers" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "MyString"], ["website", "MyString"], ["created_at", "2017-03-23 09:42:52.047790"], ["updated_at", "2017-03-23 09:42:52.047790"]]
+  [1m[35m (25.8ms)[0m  commit transaction
+Redirected to http://test.host/publishers/2
+Completed 302 Found in 28ms (ActiveRecord: 25.9ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "MyString"], ["created_at", "2017-03-23 09:44:17.240747"], ["updated_at", "2017-03-23 09:44:17.240747"]]
+  [1m[36m (29.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/categories/5
+Completed 302 Found in 36ms (ActiveRecord: 30.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>nil}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered categories/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 228ms (Views: 6.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-23 09:44:17.515329"], ["updated_at", "2017-03-23 09:44:17.515329"]]
+  [1m[35m (23.1ms)[0m  commit transaction
+Redirected to http://test.host/comics/5
+Completed 302 Found in 31ms (ActiveRecord: 23.4ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>"MyString", "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "publishers" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "MyString"], ["website", "MyString"], ["created_at", "2017-03-23 09:44:17.555969"], ["updated_at", "2017-03-23 09:44:17.555969"]]
+  [1m[36m (19.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/publishers/3
+Completed 302 Found in 24ms (ActiveRecord: 19.7ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>nil, "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "MyString"], ["created_at", "2017-03-23 09:46:09.428501"], ["updated_at", "2017-03-23 09:46:09.428501"]]
+  [1m[36m (41.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/categories/6
+Completed 302 Found in 48ms (ActiveRecord: 42.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>nil}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered categories/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 226ms (Views: 6.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-23 09:46:09.712880"], ["updated_at", "2017-03-23 09:46:09.712880"]]
+  [1m[35m (21.4ms)[0m  commit transaction
+Redirected to http://test.host/comics/6
+Completed 302 Found in 30ms (ActiveRecord: 21.7ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>"MyString", "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "publishers" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "MyString"], ["website", "MyString"], ["created_at", "2017-03-23 09:46:09.752484"], ["updated_at", "2017-03-23 09:46:09.752484"]]
+  [1m[36m (25.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/publishers/4
+Completed 302 Found in 30ms (ActiveRecord: 25.7ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>nil, "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered publishers/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (22.7ms)[0m  [1mCREATE TABLE "authors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "surname" varchar, "lastname" varchar, "birthday" date, "deathday" date, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (18.4ms)[0m  CREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (18.7ms)[0m  [1mCREATE TABLE "comics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ISBN13" varchar, "ISBN10" varchar, "title" varchar, "release_date" date, "edition" integer, "language" varchar, "format" varchar, "shape" varchar, "pages" integer, "price" decimal, "description" text, "borrowed" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (20.9ms)[0m  CREATE TABLE "job_authors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (19.4ms)[0m  [1mCREATE TABLE "publishers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "website" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "address" varchar) [0m
+  [1m[35m (20.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (18.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (15.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170323124147')
+  [1m[36m (15.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170322102312')[0m
+  [1m[35m (19.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170322125426')
+  [1m[36m (11.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170322143003')[0m
+  [1m[35m (13.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170323123326')
+  [1m[36m (15.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170323124034')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "MyString"], ["created_at", "2017-03-23 12:42:26.212078"], ["updated_at", "2017-03-23 12:42:26.212078"]]
+  [1m[35m (17.4ms)[0m  commit transaction
+Redirected to http://test.host/categories/1
+Completed 302 Found in 24ms (ActiveRecord: 17.9ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>nil}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered categories/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 289ms (Views: 6.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-23 12:42:26.535836"], ["updated_at", "2017-03-23 12:42:26.535836"]]
+  [1m[36m (19.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/comics/1
+Completed 302 Found in 28ms (ActiveRecord: 20.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>"MyString", "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "publishers" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "MyString"], ["website", "MyString"], ["created_at", "2017-03-23 12:42:26.573138"], ["updated_at", "2017-03-23 12:42:26.573138"]]
+  [1m[35m (15.9ms)[0m  commit transaction
+Redirected to http://test.host/publishers/1
+Completed 302 Found in 21ms (ActiveRecord: 16.2ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>nil, "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered publishers/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "MyString"], ["created_at", "2017-03-23 12:49:09.690117"], ["updated_at", "2017-03-23 12:49:09.690117"]]
+  [1m[36m (34.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/categories/2
+Completed 302 Found in 41ms (ActiveRecord: 34.9ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>nil}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered categories/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 269ms (Views: 6.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-23 12:49:10.010037"], ["updated_at", "2017-03-23 12:49:10.010037"]]
+  [1m[35m (18.0ms)[0m  commit transaction
+Redirected to http://test.host/comics/2
+Completed 302 Found in 27ms (ActiveRecord: 18.4ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered comics/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>"MyString", "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "publishers" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "MyString"], ["website", "MyString"], ["created_at", "2017-03-23 12:49:10.045825"], ["updated_at", "2017-03-23 12:49:10.045825"]]
+  [1m[36m (16.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/publishers/2
+Completed 302 Found in 21ms (ActiveRecord: 16.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>nil, "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered publishers/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "MyString"], ["created_at", "2017-03-23 12:51:30.363767"], ["updated_at", "2017-03-23 12:51:30.363767"]]
+  [1m[36m (29.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/categories/3
+Completed 302 Found in 35ms (ActiveRecord: 29.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>nil}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered categories/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 277ms (Views: 6.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-23 12:51:30.687334"], ["updated_at", "2017-03-23 12:51:30.687334"]]
+  [1m[35m (15.6ms)[0m  commit transaction
+Redirected to http://test.host/comics/3
+Completed 302 Found in 24ms (ActiveRecord: 15.9ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>"MyString", "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "publishers" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "MyString"], ["website", "MyString"], ["created_at", "2017-03-23 12:51:30.721009"], ["updated_at", "2017-03-23 12:51:30.721009"]]
+  [1m[36m (17.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/publishers/3
+Completed 302 Found in 23ms (ActiveRecord: 18.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>nil, "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered publishers/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "MyString"], ["created_at", "2017-03-23 12:53:17.133582"], ["updated_at", "2017-03-23 12:53:17.133582"]]
+  [1m[36m (16.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/categories/4
+Completed 302 Found in 22ms (ActiveRecord: 16.8ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>nil}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered categories/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 233ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-23 12:53:17.400355"], ["updated_at", "2017-03-23 12:53:17.400355"]]
+  [1m[35m (14.1ms)[0m  commit transaction
+Redirected to http://test.host/comics/4
+Completed 302 Found in 23ms (ActiveRecord: 14.4ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>"MyString", "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "publishers" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "MyString"], ["website", "MyString"], ["created_at", "2017-03-23 12:53:17.432356"], ["updated_at", "2017-03-23 12:53:17.432356"]]
+  [1m[36m (14.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/publishers/4
+Completed 302 Found in 19ms (ActiveRecord: 14.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>nil, "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered publishers/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (25.8ms)[0m  [1mCREATE TABLE "author_jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (15.6ms)[0m  CREATE TABLE "authors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "surname" varchar, "lastname" varchar, "birthday" date, "deathday" date, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (15.2ms)[0m  [1mCREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (23.7ms)[0m  CREATE TABLE "comics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ISBN13" varchar, "ISBN10" varchar, "title" varchar, "release_date" date, "edition" integer, "language" varchar, "format" varchar, "shape" varchar, "pages" integer, "price" decimal, "description" text, "borrowed" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (15.8ms)[0m  [1mCREATE TABLE "publishers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "website" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "address" varchar) [0m
+  [1m[35m (21.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (16.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (12.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170323125852')
+  [1m[36m (15.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170322102312')[0m
+  [1m[35m (13.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170322125426')
+  [1m[36m (15.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170322143003')[0m
+  [1m[35m (15.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170323123326')
+  [1m[36m (15.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170323124034')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "MyString"], ["created_at", "2017-03-23 13:04:58.221787"], ["updated_at", "2017-03-23 13:04:58.221787"]]
+  [1m[35m (14.5ms)[0m  commit transaction
+Redirected to http://test.host/categories/1
+Completed 302 Found in 21ms (ActiveRecord: 15.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>nil}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered categories/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 270ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-23 13:04:58.523157"], ["updated_at", "2017-03-23 13:04:58.523157"]]
+  [1m[36m (13.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/comics/1
+Completed 302 Found in 22ms (ActiveRecord: 14.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>"MyString", "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "publishers" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "MyString"], ["website", "MyString"], ["created_at", "2017-03-23 13:04:58.554388"], ["updated_at", "2017-03-23 13:04:58.554388"]]
+  [1m[35m (14.8ms)[0m  commit transaction
+Redirected to http://test.host/publishers/1
+Completed 302 Found in 20ms (ActiveRecord: 15.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>nil, "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered publishers/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "MyString"], ["created_at", "2017-03-23 13:06:56.258877"], ["updated_at", "2017-03-23 13:06:56.258877"]]
+  [1m[36m (32.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/categories/2
+Completed 302 Found in 38ms (ActiveRecord: 32.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>nil}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered categories/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 267ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-23 13:06:56.574222"], ["updated_at", "2017-03-23 13:06:56.574222"]]
+  [1m[35m (18.7ms)[0m  commit transaction
+Redirected to http://test.host/comics/2
+Completed 302 Found in 27ms (ActiveRecord: 19.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>"MyString", "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "publishers" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "MyString"], ["website", "MyString"], ["created_at", "2017-03-23 13:06:56.610491"], ["updated_at", "2017-03-23 13:06:56.610491"]]
+  [1m[36m (17.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/publishers/2
+Completed 302 Found in 23ms (ActiveRecord: 18.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>nil, "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered publishers/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "MyString"], ["created_at", "2017-03-23 13:10:26.706254"], ["updated_at", "2017-03-23 13:10:26.706254"]]
+  [1m[36m (14.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/categories/3
+Completed 302 Found in 20ms (ActiveRecord: 14.7ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>nil}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered categories/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 267ms (Views: 6.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-23 13:10:27.003981"], ["updated_at", "2017-03-23 13:10:27.003981"]]
+  [1m[35m (13.5ms)[0m  commit transaction
+Redirected to http://test.host/comics/3
+Completed 302 Found in 22ms (ActiveRecord: 13.8ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>"MyString", "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "publishers" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "MyString"], ["website", "MyString"], ["created_at", "2017-03-23 13:10:27.035386"], ["updated_at", "2017-03-23 13:10:27.035386"]]
+  [1m[36m (11.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/publishers/3
+Completed 302 Found in 17ms (ActiveRecord: 12.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>nil, "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered publishers/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "authors"
+Processing by AuthorsController#create as HTML
+  Parameters: {"author"=>{"surname"=>"MyString", "lastname"=>"MyString", "birthday"=>"2017-03-23", "deathday"=>"2017-03-23", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "authors" ("surname", "lastname", "birthday", "deathday", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["surname", "MyString"], ["lastname", "MyString"], ["birthday", "2017-03-23"], ["deathday", "2017-03-23"], ["created_at", "2017-03-23 13:11:25.744408"], ["updated_at", "2017-03-23 13:11:25.744408"]]
+  [1m[36m (20.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/authors/1
+Completed 302 Found in 28ms (ActiveRecord: 20.7ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+Processing by AuthorsController#create as HTML
+  Parameters: {"author"=>{"surname"=>"MyString", "lastname"=>"MyString", "birthday"=>"2017-03-23", "deathday"=>"2017-03-23", "description"=>"MyText", "ISBN10"=>nil}}
+Unpermitted parameters: description, ISBN10
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "authors" ("surname", "lastname", "birthday", "deathday", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["surname", "MyString"], ["lastname", "MyString"], ["birthday", "2017-03-23"], ["deathday", "2017-03-23"], ["created_at", "2017-03-23 13:11:25.771274"], ["updated_at", "2017-03-23 13:11:25.771274"]]
+  [1m[35m (11.9ms)[0m  commit transaction
+Redirected to http://test.host/authors/2
+Completed 302 Found in 14ms (ActiveRecord: 12.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "MyString"], ["created_at", "2017-03-23 13:11:25.801552"], ["updated_at", "2017-03-23 13:11:25.801552"]]
+  [1m[35m (12.2ms)[0m  commit transaction
+Redirected to http://test.host/categories/4
+Completed 302 Found in 16ms (ActiveRecord: 12.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>nil}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered categories/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 264ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-23 13:11:26.094160"], ["updated_at", "2017-03-23 13:11:26.094160"]]
+  [1m[36m (16.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/comics/4
+Completed 302 Found in 25ms (ActiveRecord: 17.0ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>"MyString", "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "publishers" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "MyString"], ["website", "MyString"], ["created_at", "2017-03-23 13:11:26.132790"], ["updated_at", "2017-03-23 13:11:26.132790"]]
+  [1m[35m (12.0ms)[0m  commit transaction
+Redirected to http://test.host/publishers/4
+Completed 302 Found in 17ms (ActiveRecord: 12.2ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>nil, "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered publishers/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "authors"
+Processing by AuthorsController#create as HTML
+  Parameters: {"author"=>{"surname"=>"MyString", "lastname"=>"MyString", "birthday"=>"2017-03-23", "deathday"=>"2017-03-23", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "authors" ("surname", "lastname", "birthday", "deathday", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["surname", "MyString"], ["lastname", "MyString"], ["birthday", "2017-03-23"], ["deathday", "2017-03-23"], ["created_at", "2017-03-23 13:12:04.746533"], ["updated_at", "2017-03-23 13:12:04.746533"]]
+  [1m[36m (19.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/authors/3
+Completed 302 Found in 27ms (ActiveRecord: 20.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+Processing by AuthorsController#create as HTML
+  Parameters: {"author"=>{"surname"=>"MyString", "lastname"=>nil, "birthday"=>"2017-03-23", "deathday"=>"2017-03-23", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 264ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "MyString"], ["created_at", "2017-03-23 13:12:05.042084"], ["updated_at", "2017-03-23 13:12:05.042084"]]
+  [1m[36m (13.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/categories/5
+Completed 302 Found in 18ms (ActiveRecord: 14.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>nil}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered categories/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-23 13:12:05.077410"], ["updated_at", "2017-03-23 13:12:05.077410"]]
+  [1m[35m (12.5ms)[0m  commit transaction
+Redirected to http://test.host/comics/5
+Completed 302 Found in 21ms (ActiveRecord: 12.8ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>"MyString", "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "publishers" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "MyString"], ["website", "MyString"], ["created_at", "2017-03-23 13:12:05.107162"], ["updated_at", "2017-03-23 13:12:05.107162"]]
+  [1m[36m (16.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/publishers/5
+Completed 302 Found in 22ms (ActiveRecord: 16.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>nil, "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered publishers/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "authors"
+Processing by AuthorsController#create as HTML
+  Parameters: {"author"=>{"surname"=>"MyString", "lastname"=>"MyString", "birthday"=>"2017-03-23", "deathday"=>"2017-03-23", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "authors" ("surname", "lastname", "birthday", "deathday", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["surname", "MyString"], ["lastname", "MyString"], ["birthday", "2017-03-23"], ["deathday", "2017-03-23"], ["created_at", "2017-03-23 13:12:30.364508"], ["updated_at", "2017-03-23 13:12:30.364508"]]
+  [1m[36m (24.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/authors/4
+Completed 302 Found in 32ms (ActiveRecord: 24.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+Processing by AuthorsController#create as HTML
+  Parameters: {"author"=>{"surname"=>"MyString", "lastname"=>nil, "birthday"=>"2017-03-23", "deathday"=>"2017-03-23", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered authors/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 271ms (Views: 6.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "MyString"], ["created_at", "2017-03-23 13:12:30.671666"], ["updated_at", "2017-03-23 13:12:30.671666"]]
+  [1m[35m (14.0ms)[0m  commit transaction
+Redirected to http://test.host/categories/6
+Completed 302 Found in 18ms (ActiveRecord: 14.3ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>nil}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered categories/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-23 13:12:30.706109"], ["updated_at", "2017-03-23 13:12:30.706109"]]
+  [1m[36m (12.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/comics/6
+Completed 302 Found in 21ms (ActiveRecord: 12.9ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>"MyString", "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "publishers" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "MyString"], ["website", "MyString"], ["created_at", "2017-03-23 13:12:30.736106"], ["updated_at", "2017-03-23 13:12:30.736106"]]
+  [1m[35m (15.4ms)[0m  commit transaction
+Redirected to http://test.host/publishers/6
+Completed 302 Found in 20ms (ActiveRecord: 15.7ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>nil, "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered publishers/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "authors"
+Processing by AuthorsController#create as HTML
+  Parameters: {"author"=>{"surname"=>"MyString", "lastname"=>"MyString", "birthday"=>"2017-03-23", "deathday"=>"2017-03-23", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "authors" ("surname", "lastname", "birthday", "deathday", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["surname", "MyString"], ["lastname", "MyString"], ["birthday", "2017-03-23"], ["deathday", "2017-03-23"], ["created_at", "2017-03-23 13:13:54.246499"], ["updated_at", "2017-03-23 13:13:54.246499"]]
+  [1m[36m (17.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/authors/5
+Completed 302 Found in 25ms (ActiveRecord: 17.6ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+Processing by AuthorsController#create as HTML
+  Parameters: {"author"=>{"surname"=>"MyString", "lastname"=>nil, "birthday"=>"2017-03-23", "deathday"=>"2017-03-23", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered authors/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 263ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "MyString"], ["created_at", "2017-03-23 13:13:54.538549"], ["updated_at", "2017-03-23 13:13:54.538549"]]
+  [1m[35m (15.9ms)[0m  commit transaction
+Redirected to http://test.host/categories/7
+Completed 302 Found in 20ms (ActiveRecord: 16.2ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>nil}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered categories/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-23 13:13:54.574896"], ["updated_at", "2017-03-23 13:13:54.574896"]]
+  [1m[36m (15.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/comics/7
+Completed 302 Found in 24ms (ActiveRecord: 15.7ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>"MyString", "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "publishers" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "MyString"], ["website", "MyString"], ["created_at", "2017-03-23 13:13:54.607654"], ["updated_at", "2017-03-23 13:13:54.607654"]]
+  [1m[35m (12.3ms)[0m  commit transaction
+Redirected to http://test.host/publishers/7
+Completed 302 Found in 17ms (ActiveRecord: 12.6ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>nil, "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered publishers/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "author_jobs"
+Processing by AuthorJobsController#create as HTML
+  Parameters: {"author_job"=>{"name"=>"MyString"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "author_jobs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "MyString"], ["created_at", "2017-03-23 13:52:02.789773"], ["updated_at", "2017-03-23 13:52:02.789773"]]
+  [1m[36m (17.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/author_jobs/1
+Completed 302 Found in 24ms (ActiveRecord: 18.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "author_jobs"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "author_jobs"[0m
+Processing by AuthorJobsController#create as HTML
+  Parameters: {"author_job"=>{"name"=>"MyString", "lastname"=>nil}}
+Unpermitted parameter: lastname
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "author_jobs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "MyString"], ["created_at", "2017-03-23 13:52:02.813867"], ["updated_at", "2017-03-23 13:52:02.813867"]]
+  [1m[35m (15.3ms)[0m  commit transaction
+Redirected to http://test.host/author_jobs/2
+Completed 302 Found in 17ms (ActiveRecord: 15.4ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+Processing by AuthorsController#create as HTML
+  Parameters: {"author"=>{"surname"=>"MyString", "lastname"=>"MyString", "birthday"=>"2017-03-23", "deathday"=>"2017-03-23", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "authors" ("surname", "lastname", "birthday", "deathday", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["surname", "MyString"], ["lastname", "MyString"], ["birthday", "2017-03-23"], ["deathday", "2017-03-23"], ["created_at", "2017-03-23 13:52:02.849427"], ["updated_at", "2017-03-23 13:52:02.849427"]]
+  [1m[35m (18.9ms)[0m  commit transaction
+Redirected to http://test.host/authors/6
+Completed 302 Found in 25ms (ActiveRecord: 19.2ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "authors"
+Processing by AuthorsController#create as HTML
+  Parameters: {"author"=>{"surname"=>"MyString", "lastname"=>nil, "birthday"=>"2017-03-23", "deathday"=>"2017-03-23", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered authors/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 262ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "MyString"], ["created_at", "2017-03-23 13:52:03.142050"], ["updated_at", "2017-03-23 13:52:03.142050"]]
+  [1m[36m (14.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/categories/8
+Completed 302 Found in 18ms (ActiveRecord: 14.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>nil}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered categories/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-23 13:52:03.176698"], ["updated_at", "2017-03-23 13:52:03.176698"]]
+  [1m[35m (20.4ms)[0m  commit transaction
+Redirected to http://test.host/comics/8
+Completed 302 Found in 29ms (ActiveRecord: 20.7ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>"MyString", "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "publishers" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "MyString"], ["website", "MyString"], ["created_at", "2017-03-23 13:52:03.214758"], ["updated_at", "2017-03-23 13:52:03.214758"]]
+  [1m[36m (19.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/publishers/8
+Completed 302 Found in 24ms (ActiveRecord: 19.7ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>nil, "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered publishers/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "author_jobs"
+Processing by AuthorJobsController#create as HTML
+  Parameters: {"author_job"=>{"name"=>"MyString"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "author_jobs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "MyString"], ["created_at", "2017-03-23 13:53:23.758364"], ["updated_at", "2017-03-23 13:53:23.758364"]]
+  [1m[36m (23.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/author_jobs/3
+Completed 302 Found in 29ms (ActiveRecord: 24.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "author_jobs"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "author_jobs"[0m
+Processing by AuthorJobsController#create as HTML
+  Parameters: {"author_job"=>{"name"=>nil}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered author_jobs/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 276ms (Views: 6.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "author_jobs"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+Processing by AuthorsController#create as HTML
+  Parameters: {"author"=>{"surname"=>"MyString", "lastname"=>"MyString", "birthday"=>"2017-03-23", "deathday"=>"2017-03-23", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "authors" ("surname", "lastname", "birthday", "deathday", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["surname", "MyString"], ["lastname", "MyString"], ["birthday", "2017-03-23"], ["deathday", "2017-03-23"], ["created_at", "2017-03-23 13:53:24.071380"], ["updated_at", "2017-03-23 13:53:24.071380"]]
+  [1m[35m (13.8ms)[0m  commit transaction
+Redirected to http://test.host/authors/7
+Completed 302 Found in 19ms (ActiveRecord: 14.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "authors"
+Processing by AuthorsController#create as HTML
+  Parameters: {"author"=>{"surname"=>"MyString", "lastname"=>nil, "birthday"=>"2017-03-23", "deathday"=>"2017-03-23", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered authors/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>"MyString"}}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "MyString"], ["created_at", "2017-03-23 13:53:24.101207"], ["updated_at", "2017-03-23 13:53:24.101207"]]
+  [1m[36m (14.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/categories/9
+Completed 302 Found in 19ms (ActiveRecord: 15.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "categories"[0m
+Processing by CategoriesController#create as HTML
+  Parameters: {"category"=>{"name"=>nil}}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered categories/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>"1845764943", "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comics" ("ISBN13", "ISBN10", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ISBN13", "9781845764944"], ["ISBN10", "1845764943"], ["title", "The Boys #1"], ["created_at", "2017-03-23 13:53:24.136681"], ["updated_at", "2017-03-23 13:53:24.136681"]]
+  [1m[35m (17.3ms)[0m  commit transaction
+Redirected to http://test.host/comics/9
+Completed 302 Found in 26ms (ActiveRecord: 17.6ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comics"
+Processing by ComicsController#create as HTML
+  Parameters: {"comic"=>{"ISBN13"=>"9781845764944", "ISBN10"=>nil, "title"=>"The Boys #1", "release_date"=>"2007", "edition"=>"1", "language"=>"EN", "format"=>"Colour comic strip", "shape"=>"258 x 170mm", "pages"=>"152", "price"=>"9.95", "description"=>"Meet Billy Butcher. He’s not a nice man, and neither are his team: the Frenchman, Mother’s Milk, and the Female", "borrowd"=>false}}
+Unpermitted parameters: release_date, edition, language, format, shape, pages, price, description, borrowd
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered comics/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>"MyString", "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "publishers" ("name", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "MyString"], ["website", "MyString"], ["created_at", "2017-03-23 13:53:24.171981"], ["updated_at", "2017-03-23 13:53:24.171981"]]
+  [1m[36m (15.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://test.host/publishers/9
+Completed 302 Found in 21ms (ActiveRecord: 15.8ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "publishers"[0m
+Processing by PublishersController#create as HTML
+  Parameters: {"publisher"=>{"name"=>nil, "website"=>"MyString", "description"=>"MyText"}}
+Unpermitted parameter: description
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered publishers/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "publishers"
