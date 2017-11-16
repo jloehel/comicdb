@@ -86,6 +86,7 @@ GEM
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.8.1)
+    isbn (2.0.11)
     jbuilder (2.6.3)
       activesupport (>= 3.0.0, < 5.2)
       multi_json (~> 1.2)
@@ -211,6 +212,8 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    wicked (1.3.2)
+      railties (>= 3.0.7)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -228,6 +231,7 @@ DEPENDENCIES
   factory_girl_rails (~> 4.5)
   faker (~> 1.6.1)
   font-awesome-rails
+  isbn
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.2.8)
@@ -242,6 +246,7 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+  wicked
 
 BUNDLED WITH
    1.14.6

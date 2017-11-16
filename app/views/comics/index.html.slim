@@ -1,0 +1,29 @@
+.modals
+  = render 'add_comic_modal1'
+
+.panel.panel-default
+  .panel-heading
+    h3.panel-title.pull-left
+      ' Comics
+    button#add_comic_btn.btn.btn-default.pull-right[role="button"]
+      ' New
+    .clearfix
+  .panel-body
+    .table-responsive
+      table.table.table-striped.table.hover
+        thead
+          tr
+            th ISBN10
+            th Title
+            th Edit
+            th Remove
+        tbody#comics
+          - if @comics.present?
+            - @comics.each do |comic|
+              tr
+                td= comic.ISBN10
+                td= comic.title
+                td
+                  i.fa.fa-pencil-square-o
+                td
+                  i.fa.fa-trash-o

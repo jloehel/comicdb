@@ -1,0 +1,32 @@
+.modal#add_comic_modal1 tabindex="-1" role="dialog" aria-labelledby="Add a new comic book" aria-hidden="true"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close[type="button", data-dismiss="modal"]
+          span[aria-hidden="true"]
+            ' &times;
+          span.sr-only
+            ' Close
+        h4#modal-title
+          ' Add a new comic book
+      .modal-body
+        .stepwizard
+          .stepwizard-row
+            .stepwizard-step
+              button#add_comic_step1.btn.btn-default.btn-circle
+                ' 1
+              p ISBN
+            .stepwizard-step#add_comic_step2
+              button.btn.btn-default.btn-circle
+                ' 2
+              p Basic information
+            .stepwizard-step#add_comic_step3
+              button.btn.btn-default.btn-circle
+                ' 3
+              p Additional information
+            .stepwizard-step#add_comic_step3
+              button.btn.btn-default.btn-circle
+                ' 4
+              p Check
+        #add_comic_form_1
+          = link_to "create comic", comics_path, method: :post

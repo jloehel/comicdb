@@ -1,0 +1,25 @@
+nav[class="navbar navbar-inverse navbar-fixed-top"]
+  .container-fluid
+    .navbar-header
+      button[type="button" class="navbar-toggle collapsed"
+             data-toggle="collapse" data-target="#navbar"
+             aria-expanded="false" aria-controls="navbar"]
+        span[class="sr-only"]
+          ' Toggle navigation
+        span[class="icon-bar"]
+        span[class="icon-bar"]
+        span[class="icon-bar"]
+      a[class="navbar-brand" href="/"]
+        ' MyComicDB
+  div[class="navbar-collapse collapse" id="navbar"]
+    ul[class="nav navbar-nav navbar-right"]
+      li
+        = link_to 'Dashboard', root_path
+      li
+        = link_to 'Comics', comics_path
+      li
+        = link_to 'Authors', authors_path
+      li
+        = link_to 'Publishers', publishers_path
+      form[class="navbar-form navbar-right"]
+        input[type="text" class="form-control" placeholder="Search ..."]

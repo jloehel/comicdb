@@ -1,0 +1,8 @@
+<% if @comic.errors.any? %>
+  $('#float-alert p').html("<%= escape_javascript(@comic.errors.full_messages.join('<br/>')) %>");
+<% else %>
+  $("<%= escape_javascript(render @comic) %>").appendTo("#comics");
+  $('#float-alert p').html("The comic '<%= @comic.title %>' was created successfully");
+  $('#add_comic_form').fadeOut();
+<% end %>
+$('#float-alert').fadeIn(setTimeOutAlertDelay());

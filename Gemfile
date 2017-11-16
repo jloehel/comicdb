@@ -18,6 +18,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem "slim"
 gem "devise"
+gem "wicked"
+gem "isbn"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

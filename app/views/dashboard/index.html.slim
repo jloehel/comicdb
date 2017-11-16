@@ -1,32 +1,3 @@
-nav[class="navbar navbar-inverse navbar-fixed-top"]
-  .container-fluid
-    .navbar-header
-      button[type="button" class="navbar-toggle collapsed"
-             data-toggle="collapse" data-target="#navbar"
-             aria-expanded="false" aria-controls="navbar"]
-        span[class="sr-only"]
-          ' Toggle navigation
-        span[class="icon-bar"]
-        span[class="icon-bar"]
-        span[class="icon-bar"]
-      a[class="navbar-brand" href="#"]
-        ' MyComicDB
-  div[class="navbar-collapse collapse" id="navbar"]
-    ul[class="nav navbar-nav navbar-right"]
-      li
-        a[href="#"]
-          ' Dashboard
-      li
-        a[href="#"]
-          ' Settings
-      li
-        a[href="#"]
-          ' Profile
-      li
-        a[href="#"]
-          ' Help
-      form[class="navbar-form navbar-right"]
-        input[type="text" class="form-control" placeholder="Search ..."]
 .content
   .row
     .col-lg-12
@@ -44,7 +15,7 @@ nav[class="navbar navbar-inverse navbar-fixed-top"]
                 ' 0
               div
                 ' Comics
-        a[href="#"]
+        = link_to comics_path
           .panel-footer
             span[class="pull-left"] View Details
             span[class="pull-right"]
@@ -61,7 +32,7 @@ nav[class="navbar navbar-inverse navbar-fixed-top"]
                 ' 0
               div
                 ' Authors
-        a[href="#"]
+        = link_to authors_path
           .panel-footer
             span[class="pull-left"] View Details
             span[class="pull-right"]
@@ -78,7 +49,7 @@ nav[class="navbar navbar-inverse navbar-fixed-top"]
                 ' 0
               div
                 ' Publishers
-        a[href="#"]
+        = link_to publishers_path
           .panel-footer
             span[class="pull-left"] View Details
             span[class="pull-right"]

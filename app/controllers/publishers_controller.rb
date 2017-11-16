@@ -1,4 +1,8 @@
 class PublishersController < ApplicationController
+  def index
+    @publishers = Publisher.all
+  end
+
   def new
     @Publisher = Publisher.new
   end

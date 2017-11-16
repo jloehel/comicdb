@@ -1,0 +1,8 @@
+= form_for :comic, url: wizard_path, method: :put, html: {id: 'new-comic-form', class: 'form-horizontal', role: 'form'} do |f|
+  .form-group
+    = f.label :ISBN, {class: 'control-label col-md-2'}
+    .col-md-7
+      = f.text_field(:ISBN, class: 'form-control', required: true, placeholder: 'The ISBN of the commic book ...')
+  .form-group
+    .col-md-offset-2.col-md-7
+      = f.submit('Next', class: 'btn btn-primary')
